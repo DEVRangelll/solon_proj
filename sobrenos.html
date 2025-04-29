@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nosso Livro</title>
+  
+  
+  <body>
+    
+    <a href="HomePage.html" class="botao-voltar">← Voltar</a>
+
+  <style>
+    
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff0f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+
+    .botao-voltar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  font-family: sans-serif;
+}
+
+.botao-voltar:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.05);
+}
+
+    .livro {
+      width: 800px;
+      height: 500px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s ease;
+      cursor: default;
+    }
+
+    .livro.aberto {
+      transform: rotateY(-160deg);
+    }
+
+    .capa,
+    .conteudo {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      backface-visibility: hidden;
+    }
+
+    .capa {
+      background: #ff69b4;
+      top: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 3em;
+      z-index: 2;
+    }
+
+    .conteudo {
+      background: white;
+      transform: rotateY(180deg);
+      padding: 90px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .conteudo h2 {
+      font-size: 2.5em;
+      color: #d66ba0;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    .conteudo p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      text-align: justify;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      padding: 0 20px;
+    }
+
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .galeria img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.08);
+    }
+
+    .fofos {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .fofos img {
+      width: 120px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center;
+      background-size: contain;
+      animation: floatUp 10s infinite ease-in;
+      opacity: 0.7;
+      z-index: 0;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 0.8; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    .botoes {
+      margin-bottom: 30px;
+    }
+
+    .botoes button {
+      background-color: #ff69b4;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1em;
+      color: white;
+      border-radius: 30px;
+      margin: 0 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    .botoes button:hover {
+      background-color: #ff85c1;
+    }
+
+    /* --- Player de Áudio Estilo WhatsApp --- */
+    .audio-player {
+      display: flex;
+      align-items: center;
+      background-color: #e1ffc7;
+      border-radius: 20px;
+      padding: 10px 15px;
+      width: 300px;
+      margin: 20px 0;
+    }
+
+    .play-button {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .audio-bar {
+      flex-grow: 1;
+      height: 5px;
+      background-color: #ccc;
+      border-radius: 5px;
+      position: relative;
+      margin-right: 10px;
+    }
+
+    .audio-progress {
+      height: 5px;
+      background-color: #25D366;
+      width: 0%;
+      border-radius: 5px;
+    }
+
+    #audio {
+      display: none;
+    }
+
+    #time {
+      font-size: 12px;
+    }
+
+    
+    
+  </style>
+</head>
+<body>
+
+  <!-- Corações flutuantes -->
+  <div class="heart" style="left: 10%; animation-delay: 1s;"></div>
+  <div class="heart" style="left: 40%; animation-delay: 3s;"></div>
+  <div class="heart" style="left: 70%; animation-delay: 5s;"></div>
+
+ 
+  
+  <!-- Botões -->
+  <div class="botoes">
+    <button onclick="abrirLivro()">Abrir Livro</button>
+    <button onclick="fecharLivro()">Fechar Livro</button>
+  </div>
+
+  <!-- Livro -->
+  <div class="livro" id="livro">
+    <div class="capa">📖 Quer saber algo?</div>
+    <div class="conteudo">
+      <h2>Sobre Nós</h2>
+      <p>
+        Desde que te conheci nunca parei de pensar em você, somos um casal brincalhão e muito zueiro e o que eu mais valorizo é isso entre a gente, as nossas brigas, graças, apelidos carinhosos como: Xu, neném, MENOS VIDA pelo amor de Deus né?
+        Eu te amo muito meu amor, espero continuar assim com você pra sempre desse mesmo jeitinho que somos, simples e amorosos uns com os outros, espero que nunca percamos essa nossa essência que nos deixa tão bem e felizes.
+        Hoje você tá lendo isso e saiba que foi de coração, mas tudo que for para você vale a pena, eu iria até a lua pra te fazer feliz e fazer o que for preciso para ficar do seu lado e me casar com você.
+      </p>
+
+      <!-- Player de áudio aqui -->
+      
+      
+      <div class="galeria">
+        <img src="img/Imagem do WhatsApp de 2025-04-23 à(s) 20.06.48_a370b35f.jpg" alt="Foto 1">
+        <img src="img/Imagem do WhatsApp de 2025-04-23 à(s) 20.06.52_24d2c019.jpg" alt="Foto 2">
+        <img src="img/Imagem do WhatsApp de 2025-04-12 à(s) 22.29.07_f72f2411.jpg" alt="Foto 3">
+        <img src="img/Imagem do WhatsApp de 2025-04-12 à(s) 22.29.07_e65c6c53.jpg" alt="Foto 4">
+        <img src="img/Imagem do WhatsApp de 2025-04-23 à(s) 20.06.48_a370b35f.jpg" alt="Foto 5">
+      </div>
+
+      <div class="audio-player">
+        <button class="play-button" onclick="playAudio()">▶️</button>
+        <div class="audio-bar">
+          <div class="audio-progress" id="progress"></div>
+        </div>
+        <span id="time">0:00</span>
+        <audio id="audio" src="audio/Áudio do WhatsApp de 2025-04-26 à(s) 00.20.33_423fa506.waptt.opus"></audio>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const livro = document.getElementById('livro');
+
+    function abrirLivro() {
+      livro.classList.add('aberto');
+    }
+
+    function fecharLivro() {
+      livro.classList.remove('aberto');
+    }
+
+    function playAudio() {
+      var audio = document.getElementById("audio");
+      var progress = document.getElementById("progress");
+      var time = document.getElementById("time");
+
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+
+      audio.ontimeupdate = function() {
+        var percent = (audio.currentTime / audio.duration) * 100;
+        progress.style.width = percent + "%";
+        time.textContent = formatTime(audio.currentTime);
+      };
+    }
+
+    function formatTime(seconds) {
+      var min = Math.floor(seconds / 60);
+      var sec = Math.floor(seconds % 60);
+      if (sec < 10) sec = "0" + sec;
+      return min + ":" + sec;
+    }
+  </script>
+
+</body>
+</html>

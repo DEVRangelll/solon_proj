@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alguns dos nossos incriveis momentos!</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .polaroid {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transform: rotate(0deg);
+            transition: transform 0.3s ease;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .polaroid:hover {
+            transform: rotate(-5deg);
+        }
+
+        .polaroid-video {
+            width: 100%;
+            height: auto;
+            border-bottom: 5px solid #eee;
+        }
+
+        .polaroid-info {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .date {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .botao-voltar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  font-family: sans-serif;
+}
+
+.botao-voltar:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.05);
+}
+
+    </style>
+</head>
+<body>
+    <a href="HomePage.html" class="botao-voltar">← Voltar</a>
+    <div class="container">
+        <h1>Alguns dos melhores momentos! </h1>
+        <div class="gallery">
+            <!-- Vídeo 1 -->
+            <div class="polaroid">
+                <video class="polaroid-video" controls>
+                    <source src="homevideos/Vídeo do WhatsApp de 2025-04-28 à(s) 23.11.31_8a09a89e.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo.
+                </video>
+                <div class="polaroid-info">
+                    
+                    <p class="description">Aqui foi no primeiro dia que a gente saiu, não falei tanto mas você tava linda, você me fazia rir como ninguém fazia naquele momento, a minha vida se tornou muito mais leve com você!</p>
+                </div>
+            </div>
+
+            <!-- Vídeo 2 -->
+            <div class="polaroid">
+                <video class="polaroid-video" controls>
+                    <source src="homevideos/Vídeo do WhatsApp de 2025-04-28 à(s) 22.16.51_c83eecc5.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo.
+                </video>
+                <div class="polaroid-info">
+                  
+                    <p class="description">O dia em que você tava reclamando que eu comprei o PC e te levei no magnifico, aquele dia não só aquele dia mas como todos os outros os dias lá gaurda um grande momento no meu coração e uma parte da nossa história lá.</p>
+                </div>
+            </div>
+
+            <!-- Vídeo 3 -->
+            <div class="polaroid">
+                <video class="polaroid-video" controls>
+                    <source src="homevideos/Vídeo do WhatsApp de 2025-04-28 à(s) 22.16.51_ce9f0c07.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo.
+                </video>
+                <div class="polaroid-info">
+                    
+                    <p class="description">O dia do parque kkkk, aquele dia comemos de tudo e ainda fomos no shopping passear, sem dúvidas um dos melhores dias, ainda nos lambuzamos de churros KKKKKKKK.</p>
+                </div>
+            </div>
+
+            <!-- Vídeo 4 -->
+            <div class="polaroid">
+                <video class="polaroid-video" controls>
+                    <source src="homevideos/Vídeo do WhatsApp de 2025-04-28 à(s) 22.16.56_5f0ca851.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo.
+                </video>
+                <div class="polaroid-info">
+                    
+                    <p class="description">Preciso nem dizer, veja se quiser rs</p>
+                </div>
+            </div>
+
+            <!-- Vídeo 5 -->
+            <div class="polaroid">
+                <video class="polaroid-video" controls>
+                    <source src="homevideos/Vídeo do WhatsApp de 2025-04-28 à(s) 23.16.53_80b9c035.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo.
+                </video>
+                <div class="polaroid-info">
+                          
+                    <p class="description">O dia em que fiz a inicial no seu cabelo e fiquei me achando que você amou, um dia eu faço outra tá? </p>
+                </div>
+            </div>
+
+            <!-- Vídeo 6 -->
+            <div class="polaroid">
+                <video class="polaroid-video" controls>
+                    <source src="homevideos/Vídeo do WhatsApp de 2025-04-28 à(s) 23.16.53_fa6e4e26.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo.
+                </video>
+                <div class="polaroid-info">
+                                
+                    <p class="description">Aniversário do Guizinho,  esse dia a gente ficou jogando na maquina um contra o outro um tempao, pena que n tenho video, mas um lembrete que esse dia também foi muito especial, afinal você tava a mulher mais linda que eu já tinha visto na vida.</p>
+                </div>
+            </div>
+
+            <!-- Vídeo 7 -->
+            <div class="polaroid">
+                <video class="polaroid-video" controls>
+                    <source src="homevideos/bat a ta.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo.
+                </video>
+                <div class="polaroid-info">
+                    
+                    <p class="description">O dia que depois da minha visita na Meta a gente se encontrou pra comer uma batatinha, simples mas um dos dias mais leves que qualquer pessoa deseja ter, receber um carinho da pessoa que mais ama e mais admira.</p>
+                </div>
+            </div>
+
+            <!-- Vídeo 8 -->
+            <div class="polaroid">
+                <video class="polaroid-video" controls>
+                    <source src="homevideos/story.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo.
+                </video>
+                <div class="polaroid-info">
+                    
+                    <p class="description">Um lembrete do Story que postamos quando iniciamos nosso namoro, nem parece que passou tanto tempo né? rsrsrs</p>
+                </div>
+            </div>
+
+            <!-- Vídeo 9 -->
+            <div class="polaroid">
+                <video class="polaroid-video" controls>
+                    <source src="homevideos/bb.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo.
+                </video>
+                <div class="polaroid-info">
+                    
+                    <p class="description">Você vai me matar mas mesmo assim, o dia que fomos no rodizio perto da sua casa, dois estranhos comendo e dando as melhores risadas kkkkk</p>
+                </div>
+            </div>
+
+            <!-- Vídeo 10 -->
+            <div class="polaroid">
+                <video class="polaroid-video" controls>
+                    <source src="homevideos/safadeza.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo.
+                </video>
+                <div class="polaroid-info">
+                   
+                    <p class="description">Uma pequena brincadeirinha na piscina que resultou na risada mais gostosa que já presenciei</p>
+                </div>
+            </div>
+
+            <!-- Vídeo 11 -->
+            <div class="polaroid">
+                <video class="polaroid-video" controls>
+                    <source src="homevideos/balao.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo.
+                </video>
+                <div class="polaroid-info">
+                    
+                    <p class="description">O dia em que viajamos e fomos passear na roda gigante, esse video foi certinho na hora que eu devo ter falado alguma besteira do seu peito, que inclusive enquanto estou fazendo isso tá me dando água na boca, um dos motivos de eu te amar rsrs</p>
+                </div>
+            </div>
+
+            <!-- Vídeo 12 -->
+            <div class="polaroid">
+                <video class="polaroid-video" controls>
+                    <source src="homevideos/a.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo.
+                </video>
+                <div class="polaroid-info">
+                    
+                    <p class="description">Assiste tudo não kkkkk, só o começo pra você ver o golden que você tem em casa!</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const polaroids = document.querySelectorAll('.polaroid');
+
+            polaroids.forEach((polaroid, index) => {
+                polaroid.style.animationDelay = `${index * 0.2}s`;
+            });
+        });
+    </script>
+</body>
+</html>

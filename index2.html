@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartão de Aniversário</title>
+  <link rel="stylesheet" href="Style2.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <a href="HomePage.html" class="botao-voltar">← Voltar</a>
+
+  <div class="container">  
+    <div class="valentines">
+      <div class="envelope"></div>
+      <div class="front"></div>
+      <div class="card">
+        <div class="text">Feliz nossos<br>2 anos<br>meu bem!</div>
+        <div class="heart"></div>
+      </div>
+      <div class="hearts">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <div class="four"></div>
+        <div class="five"></div>
+      </div>
+    </div>
+  </div>
+  <div class="shadow"></div>
+
+  <!-- Menu Hamburguer -->
+  <div class="hamburger-menu z-50">
+    <button id="menu-toggle" class="menu-btn">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </button>
+
+    <nav id="side-menu" class="side-menu">
+      <button id="close-menu" class="close-btn">✖</button>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Sobre Nós</a></li>
+        <li><a href="#">Nossa História</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+
+ 
+  <div class="floating-images">
+    <img src="img/Imagem do WhatsApp de 2025-04-12 à(s) 22.29.05_5b1c1292.jpg" class="img top-left">
+    <img src="img/Imagem do WhatsApp de 2025-04-12 à(s) 22.29.05_f1553495.jpg" class="img top-right">
+    <img src="img/Imagem do WhatsApp de 2025-04-23 à(s) 20.01.51_ff1abc32.jpg" class="img middle-left">
+    <img src="img/Imagem do WhatsApp de 2025-04-23 à(s) 20.01.51_894a312d.jpg" class="img middle-right">
+    <img src="img/Imagem do WhatsApp de 2025-04-23 à(s) 20.06.48_a370b35f.jpg" class="img bottom-left">
+    <img src="img/Imagem do WhatsApp de 2025-04-23 à(s) 20.06.52_24d2c019.jpg" class="img bottom-right">
+  </div>
+  
+
+ 
+
+  <script>
+    $(document).ready(function () {
+      $('.container').mouseenter(function () {
+        $('.card').stop().animate({ top: '-90px' }, 'slow');
+      }).mouseleave(function () {
+        $('.card').stop().animate({ top: 0 }, 'slow');
+      });
+    });
+
+    const toggleBtn = document.getElementById('menu-toggle');
+    const sideMenu = document.getElementById('side-menu');
+    const closeBtn = document.getElementById('close-menu');
+
+    toggleBtn.addEventListener('click', () => {
+      toggleBtn.classList.toggle('open');
+      sideMenu.classList.toggle('show');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      toggleBtn.classList.remove('open');
+      sideMenu.classList.remove('show');
+    });
+  </script>
+</body>
+</html>
